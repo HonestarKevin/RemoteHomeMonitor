@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">RemoteHomeMonitor</string>
+    <string name="action_settings">Settings</string>
+
+   	<!-- 通用 start -->
+    <string name="str_next">"下一步"</string>
+    <string name="str_previous">"上一步"</string>
+    <!-- 通用 End -->
+    
+    <!-- 设置页 welcome Start-->
+    <string name="str_welcome_setup_wizard_title">设置向导</string>
+    <string name="str_welcome_setup_wizard_context">"    这个设置向导用于设置本应用程序的基本运行参数，请点击“下一步”继续设置！"</string>
+	<!-- 设置页 welcome End-->
+	
+	<!-- 设置管理页 Start -->
+    <string name="str_admin_setup_title">"设置管理员"</string>
+    <string name="str_admin_setup_username">"用户名:"</string>
+    <string name="str_admin_setup_passwd">"密  码:"</string>
+    <string name="str_admin_setup_passwd_verify">密码确认:</string>
+    <!-- 设置管理页 End -->
+    
+    <!-- 设置终端 Start -->
+    <string name="str_telnet_setup_title">"设置远程通讯终端"</string>
+    <string name="str_telnet_setup_telnet_name">"终端名:"</string>
+    <string name="str_telnet_setup_telnet_connectipn_number">"通讯号:"</string>
+    <!-- 设置终端 End -->
+
+    <!-- 设置设备 Start -->
+    <string name="str_device_setup_title">"设置感应设备"</string>
+    <string name="str_device_setup_name">"设备名:"</string>
+    <string name="str_device_setup_number">"设备ID:"</string>
+    <string name="str_device_add">"增加"</string>
+    <string name="str_setup_finish">"完成"</string>
+    <!-- 设置设备 End -->
+    
+</resources>

@@ -1,0 +1,29 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    
+    <!-- 欢迎页面 Start -->
+    <dimen name="d_welcome_setup_title">30dp</dimen>
+    <dimen name="d_welcome_setup_context">20dp</dimen>
+	<dimen name="d_welcome_setup_title_setup_context_margin">30dp</dimen>
+	<dimen name="d_welcome_setup_margin_left">10dp</dimen>
+	<dimen name="d_welcome_setup_margin_right">10dp</dimen>
+	
+	<dimen name="d_welcome_setup_context_setup_next_margin">30dp</dimen>
+	<!-- 欢迎页面 End -->
+	<!-- 通用 start -->	
+	<dimen name="d_setup_next_high">30dp</dimen>
+	<dimen name="d_setup_next_width">80dp</dimen>
+	<dimen name="d_setup_margin_top">20dp</dimen>
+	<dimen name="d_setup_margin_left">10dp</dimen>
+	<dimen name="d_setup_margin_right">10dp</dimen>
+	<dimen name="d_setup_edit_width">200dp</dimen>
+	<dimen name="d_setup_edit_high">30dp</dimen>
+	<dimen name="d_setup_button_margin_left">100dp</dimen>
+	<dimen name="d_setup_button_three_margin_left">30dp</dimen>
+	<!-- 通用 End -->
+	
+	
+</resources>

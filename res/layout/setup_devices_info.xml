@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 设置远程终端页面 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/l_devices_setup"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:visibility="gone" >
+
+    <TextView
+        style="@android:style/TextAppearance.WindowTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/d_welcome_setup_margin_left"
+        android:text="@string/str_device_setup_title"
+        android:textSize="@dimen/d_welcome_setup_title"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/d_welcome_setup_title_setup_context_margin"
+        android:background="@drawable/line" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/d_setup_margin_top"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/d_setup_edit_high"
+                android:text="@string/str_device_setup_name"
+                android:textSize="@dimen/d_welcome_setup_context"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/d_setup_edit_high"
+                android:text="@string/str_device_setup_number"
+                android:textSize="@dimen/d_welcome_setup_context"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/d_setup_margin_top"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/e_setup_device_name"
+                android:layout_width="@dimen/d_setup_edit_width"
+                android:layout_height="@dimen/d_setup_edit_high"
+                android:singleLine="true" />
+
+            <EditText
+                android:id="@+id/e_setup_device_number"
+                android:layout_width="@dimen/d_setup_edit_width"
+                android:layout_height="@dimen/d_setup_edit_high"
+                android:inputType="number"
+                android:singleLine="true" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/d_welcome_setup_title_setup_context_margin"
+        android:background="@drawable/line" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/d_setup_margin_top"
+        android:orientation="horizontal" >
+        <Button
+            android:id="@+id/b_device_previous"
+            android:layout_width="@dimen/d_setup_next_width"
+            android:layout_height="@dimen/d_setup_next_high"
+            android:layout_gravity="left"
+            android:layout_marginLeft="@dimen/d_welcome_setup_margin_left"
+            android:background="@drawable/button_background"
+            android:gravity="center"
+            android:onClick="PreviousButtonOnClick"
+            android:text="@string/str_previous"
+            android:textSize="@dimen/d_welcome_setup_context" />
+        
+        <Button
+            android:id="@+id/b_device_add"
+            android:layout_width="@dimen/d_setup_next_width"
+            android:layout_height="@dimen/d_setup_next_high"
+            android:layout_gravity="left"
+            android:layout_marginLeft="@dimen/d_setup_button_three_margin_left"
+            android:background="@drawable/button_background"
+            android:gravity="center"
+            android:onClick="AddButtonOnClick"
+            android:text="@string/str_device_add"
+            android:textSize="@dimen/d_welcome_setup_context" />
+
+        <Button
+            android:id="@+id/b_finish"
+            android:layout_width="@dimen/d_setup_next_width"
+            android:layout_height="@dimen/d_setup_next_high"
+            android:layout_gravity="right"
+            android:layout_marginLeft="@dimen/d_setup_button_three_margin_left"
+            android:layout_marginRight="@dimen/d_welcome_setup_margin_right"
+            android:background="@drawable/button_background"
+            android:gravity="center"
+            android:onClick="FinishButtonOnClick"
+            android:text="@string/str_setup_finish"
+            android:textSize="@dimen/d_welcome_setup_context" />
+    </LinearLayout>
+
+</LinearLayout>

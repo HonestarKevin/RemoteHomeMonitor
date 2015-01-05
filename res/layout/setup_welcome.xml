@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 设置首页 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/l_welcom_setup"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:visibility="visible" >
+
+    <TextView
+        style="@android:style/TextAppearance.WindowTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/d_welcome_setup_margin_left"
+        android:text="@string/str_welcome_setup_wizard_title"
+        android:textSize="@dimen/d_welcome_setup_title" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/d_welcome_setup_title_setup_context_margin"
+        android:background="@drawable/line" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/d_welcome_setup_margin_left"
+        android:layout_marginRight="@dimen/d_welcome_setup_margin_right"
+        android:layout_marginTop="@dimen/d_welcome_setup_title_setup_context_margin"
+        android:text="@string/str_welcome_setup_wizard_context"
+        android:textSize="@dimen/d_welcome_setup_context" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/d_welcome_setup_title_setup_context_margin"
+        android:background="@drawable/line" />
+
+    <Button
+        android:id="@+id/b_welcome_next"
+        android:layout_width="@dimen/d_setup_next_width"
+        android:layout_height="@dimen/d_setup_next_high"
+        android:layout_gravity="right"
+        android:gravity="center"
+        android:layout_marginRight="@dimen/d_welcome_setup_margin_right"
+        android:layout_marginTop="@dimen/d_welcome_setup_context_setup_next_margin"
+        android:background="@drawable/button_background"
+        android:text="@string/str_next"
+        android:textSize="@dimen/d_welcome_setup_context" 
+        android:onClick="NextButtonOnClick"/>
+
+</LinearLayout>

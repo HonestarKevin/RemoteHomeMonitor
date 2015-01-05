@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">RemoteHomeMonitor</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- 通用 start -->
+    <string name="str_next">"Next"</string>
+    <string name="str_previous">"Privous"</string>
+    <!-- 通用 End -->
+
+
+    <!-- 设置页 welcome Start -->
+    <string name="str_welcome_setup_wizard_title">"Setup Wizard"</string>
+    <string name="str_welcome_setup_wizard_context">"This wizard can set for this application basic parameters, 
+        please click "next" to continue."</string>
+    <!-- 设置页 welcome End -->
+
+
+    <!-- 设置管理页 Start -->
+    <string name="str_admin_setup_title">"Setup Adminstrator"</string>
+    <string name="str_admin_setup_username">"Username:"</string>
+    <string name="str_admin_setup_passwd">"Passwd:"</string>
+    <string name="str_admin_setup_passwd_verify">"Passwd verify:"</string>
+    <!-- 设置管理页 End -->
+
+
+    <!-- 设置终端 Start -->
+    <string name="str_telnet_setup_title">"Setup Remote Connect Telnet"</string>
+    <string name="str_telnet_setup_telnet_name">"Telnet Name:"</string>
+    <string name="str_telnet_setup_telnet_connectipn_number">"Telnet Number:"</string>
+    <!-- 设置终端 End -->
+    <!-- 设置设备 Start -->
+    <string name="str_device_setup_title">"Setup Sensor Devices"</string>
+    <string name="str_device_setup_name">"Device Name:"</string>
+    <string name="str_device_setup_number">"Devices ID:"</string>
+    <string name="str_device_add">"Add"</string>
+    <string name="str_setup_finish">"Finish"</string>
+    <!-- 设置设备 End -->
+
+</resources>
