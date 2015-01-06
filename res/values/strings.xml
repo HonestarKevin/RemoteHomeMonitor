@@ -22,6 +22,10 @@
     <string name="str_admin_setup_username">"Username:"</string>
     <string name="str_admin_setup_passwd">"Passwd:"</string>
     <string name="str_admin_setup_passwd_verify">"Passwd verify:"</string>
+    <string name="str_please_input_username">"Please input Administration name！"</string>
+    <string name="str_please_input_passwd">"Please input Administration passwd！"</string>
+    <string name="str_please_input_passwd_verify">"Please input Administration passwd again！"</string>
+    <string name="str_input_passwd_error_warning">"Warning:The two passwords you typed do not match. Try again！！！"</string>
     <!-- 设置管理页 End -->
 
 
@@ -29,6 +33,8 @@
     <string name="str_telnet_setup_title">"Setup Remote Connect Telnet"</string>
     <string name="str_telnet_setup_telnet_name">"Telnet Name:"</string>
     <string name="str_telnet_setup_telnet_connectipn_number">"Telnet Number:"</string>
+    <string name="str_please_input_telnet_name">"Please Input Telnet Name！"</string>
+    <string name="str_please_input_telnet_connection_number">"Please Input Telnet Connection Number！"</string>
     <!-- 设置终端 End -->
     <!-- 设置设备 Start -->
     <string name="str_device_setup_title">"Setup Sensor Devices"</string>
@@ -36,6 +42,8 @@
     <string name="str_device_setup_number">"Devices ID:"</string>
     <string name="str_device_add">"Add"</string>
     <string name="str_setup_finish">"Finish"</string>
+        <string name="str_please_input_sensor_device_name">"Please Input Device Name！"</string>
+    <string name="str_please_input_sensor_devices_number">"Please Input Sendor Device serial number ID！"</string>
     <!-- 设置设备 End -->
 
 </resources>

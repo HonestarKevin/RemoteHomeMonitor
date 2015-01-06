@@ -19,12 +19,18 @@
     <string name="str_admin_setup_username">"用户名:"</string>
     <string name="str_admin_setup_passwd">"密  码:"</string>
     <string name="str_admin_setup_passwd_verify">密码确认:</string>
+    <string name="str_please_input_username">"请输入用户名！"</string>
+    <string name="str_please_input_passwd">"请输入密码！"</string>
+    <string name="str_please_input_passwd_verify">"请再次输入密码确认！"</string>
+    <string name="str_input_passwd_error_warning">"警告:两次密码输入不一致,请重试！！！"</string>
     <!-- 设置管理页 End -->
     
     <!-- 设置终端 Start -->
     <string name="str_telnet_setup_title">"设置远程通讯终端"</string>
     <string name="str_telnet_setup_telnet_name">"终端名:"</string>
     <string name="str_telnet_setup_telnet_connectipn_number">"通讯号:"</string>
+    <string name="str_please_input_telnet_name">"请输入终端名！"</string>
+    <string name="str_please_input_telnet_connection_number">"请输入终端通讯号码！"</string>
     <!-- 设置终端 End -->
 
     <!-- 设置设备 Start -->
@@ -33,6 +39,8 @@
     <string name="str_device_setup_number">"设备ID:"</string>
     <string name="str_device_add">"增加"</string>
     <string name="str_setup_finish">"完成"</string>
+    <string name="str_please_input_sensor_device_name">"请输入设备名称！"</string>
+    <string name="str_please_input_sensor_device_number_id">"请输入感应设备序列号ID！"</string>
     <!-- 设置设备 End -->
     
 </resources>
