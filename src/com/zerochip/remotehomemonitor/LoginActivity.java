@@ -26,14 +26,20 @@ public class LoginActivity extends Activity
     {
         if (mWorkContext.mPreferences != null)
         {
-            if(DEBUG)Log.e(TAG, "mWorkContext.mPreferences != null + "+mWorkContext.mPreferences.getBoolean(
-                    mWorkContext.configNeedRunSetupWizardString, true));
+            if (DEBUG)
+                Log.e(TAG,
+                        "mWorkContext.mPreferences != null + "
+                                + mWorkContext.mPreferences
+                                        .getBoolean(
+                                                mWorkContext.configNeedRunSetupWizardString,
+                                                true));
             return mWorkContext.mPreferences.getBoolean(
                     mWorkContext.configNeedRunSetupWizardString, true);
         }
         else
         {
-            if(DEBUG)Log.e(TAG, "mWorkContext.mPreferences null error");
+            if (DEBUG)
+                Log.e(TAG, "mWorkContext.mPreferences null error");
             return true;
         }
     }
@@ -53,8 +59,8 @@ public class LoginActivity extends Activity
         mWorkContext.mSimpleTextToSpeech = new SimpleTextToSpeech(
                 mWorkContext.mContext, mTtsSpeechRate);
         mWorkContext.mPreferences = getSharedPreferences(
-                mWorkContext.configFileNameString,
-                Activity.MODE_WORLD_READABLE+Activity.MODE_WORLD_WRITEABLE);
+                mWorkContext.configFileNameString, Activity.MODE_WORLD_READABLE
+                        + Activity.MODE_WORLD_WRITEABLE);
         setContentView(R.layout.activity_login);
         boolean NeedSetupUserInfo = CheckNeedSetup();
         // 如果是第一次打开这个APK。就提示用户设置用户名，密码。增加帐号等；

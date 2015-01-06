@@ -56,12 +56,13 @@ public class SetupWizardActivity extends Activity
         mWorkContext.mSimpleTextToSpeech = new SimpleTextToSpeech(
                 mWorkContext.mContext, mTtsSpeechRate);
         mWorkContext.mPreferences = getSharedPreferences(
-                mWorkContext.configFileNameString, 
-                Activity.MODE_WORLD_READABLE+Activity.MODE_WORLD_WRITEABLE);
+                mWorkContext.configFileNameString, Activity.MODE_WORLD_READABLE
+                        + Activity.MODE_WORLD_WRITEABLE);
         editor = mWorkContext.mPreferences.edit();
         editor.clear();
         editor.commit();
-        if(DEBUG)Log.e(TAG, "onCreate-------");
+        if (DEBUG)
+            Log.e(TAG, "onCreate-------");
         setContentView(R.layout.activity_setupwizard);
     }
 
