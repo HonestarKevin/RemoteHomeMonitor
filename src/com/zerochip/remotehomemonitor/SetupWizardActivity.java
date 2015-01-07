@@ -3,6 +3,7 @@ package com.zerochip.remotehomemonitor;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.zerochip.util.AnimationFactory;
 import com.zerochip.util.GetNetWorkState;
 import com.zerochip.util.SimpleTextToSpeech;
 import com.zerochip.util.WorkContext;
@@ -55,6 +56,7 @@ public class SetupWizardActivity extends Activity
                 mWorkContext.mContext);
         mWorkContext.mSimpleTextToSpeech = new SimpleTextToSpeech(
                 mWorkContext.mContext, mTtsSpeechRate);
+        mWorkContext.mAnimationFactory = new AnimationFactory(mWorkContext);
         mWorkContext.mPreferences = getSharedPreferences(
                 mWorkContext.configFileNameString, Activity.MODE_WORLD_READABLE
                         + Activity.MODE_WORLD_WRITEABLE);
@@ -258,7 +260,7 @@ public class SetupWizardActivity extends Activity
                 @Override
                 public void run()
                 {
-                    SetShowPage(R.id.l_welcom_setup, R.id.l_admin_setup);
+                    SetShowPage(R.id.l_welcom_setup, R.id.l_admin_setup, false);
                 }
             });
             break;
@@ -272,7 +274,8 @@ public class SetupWizardActivity extends Activity
                     String AdminPasswd = GetAdminPasswd();
                     if (SaveAdminInfo(AdminUsername, AdminPasswd))
                     {
-                        SetShowPage(R.id.l_admin_setup, R.id.l_telnet_setup);
+                        SetShowPage(R.id.l_admin_setup, R.id.l_telnet_setup,
+                                false);
                     }
                 }
             });
@@ -287,7 +290,8 @@ public class SetupWizardActivity extends Activity
                     String TelnetConnectionNumber = GetTelnetNumber();
                     if (SaveTelnetInfo(TelnetName, TelnetConnectionNumber))
                     {
-                        SetShowPage(R.id.l_telnet_setup, R.id.l_devices_setup);
+                        SetShowPage(R.id.l_telnet_setup, R.id.l_devices_setup,
+                                false);
                     }
                 }
             });
@@ -314,7 +318,7 @@ public class SetupWizardActivity extends Activity
                 @Override
                 public void run()
                 {
-                    SetShowPage(R.id.l_admin_setup, R.id.l_welcom_setup);
+                    SetShowPage(R.id.l_admin_setup, R.id.l_welcom_setup, true);
                 }
             });
             break;
@@ -324,7 +328,7 @@ public class SetupWizardActivity extends Activity
                 @Override
                 public void run()
                 {
-                    SetShowPage(R.id.l_telnet_setup, R.id.l_admin_setup);
+                    SetShowPage(R.id.l_telnet_setup, R.id.l_admin_setup, true);
                 }
             });
             break;
@@ -334,7 +338,7 @@ public class SetupWizardActivity extends Activity
                 @Override
                 public void run()
                 {
-                    SetShowPage(R.id.l_devices_setup, R.id.l_telnet_setup);
+                    SetShowPage(R.id.l_devices_setup, R.id.l_telnet_setup, true);
                 }
             });
             break;
@@ -350,12 +354,27 @@ public class SetupWizardActivity extends Activity
      *            当前页面
      * @param GotoPageLinearLayoutId
      *            要跳转的页面
+     * @param LeftFlage
      */
     private void SetShowPage(int CurrentPageLinearLayoutId,
-            int GotoPageLinearLayoutId)
+            int GotoPageLinearLayoutId, boolean LeftFlage)
     {
         LinearLayout CurrentPageLinearLayout = (LinearLayout) findViewById(CurrentPageLinearLayoutId);
         LinearLayout GotoPageLinearLayout = (LinearLayout) findViewById(GotoPageLinearLayoutId);
+        if (LeftFlage)
+        {
+            CurrentPageLinearLayout.setAnimation(mWorkContext.mAnimationFactory
+                    .GetAnimationSet(R.anim.push_right_out));
+            GotoPageLinearLayout.setAnimation(mWorkContext.mAnimationFactory
+                    .GetAnimationSet(R.anim.push_left_in));
+        }
+        else
+        {
+            CurrentPageLinearLayout.setAnimation(mWorkContext.mAnimationFactory
+                    .GetAnimationSet(R.anim.push_left_out));
+            GotoPageLinearLayout.setAnimation(mWorkContext.mAnimationFactory
+                    .GetAnimationSet(R.anim.push_right_in));
+        }
         CurrentPageLinearLayout.setVisibility(View.GONE);
         GotoPageLinearLayout.setVisibility(View.VISIBLE);
     }

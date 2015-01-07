@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Workspace cell row --> 
+    <integer name="cellCountY">8</integer>
+    <integer name="translate_time">500</integer>
+    <integer name="alpha_time">100</integer>
+    <integer name="animation_tag">1000</integer>
+    
+</resources>

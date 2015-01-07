@@ -1,5 +1,6 @@
 package com.zerochip.remotehomemonitor;
 
+import com.zerochip.util.AnimationFactory;
 import com.zerochip.util.GetNetWorkState;
 import com.zerochip.util.SimpleTextToSpeech;
 import com.zerochip.util.WorkContext;
@@ -58,6 +59,7 @@ public class LoginActivity extends Activity
                 mWorkContext.mContext);
         mWorkContext.mSimpleTextToSpeech = new SimpleTextToSpeech(
                 mWorkContext.mContext, mTtsSpeechRate);
+        mWorkContext.mAnimationFactory = new AnimationFactory(mWorkContext);
         mWorkContext.mPreferences = getSharedPreferences(
                 mWorkContext.configFileNameString, Activity.MODE_WORLD_READABLE
                         + Activity.MODE_WORLD_WRITEABLE);

@@ -21,6 +21,7 @@ public class WorkContext
     public GetNetWorkState mGetNetWorkState = null;
     public SimpleTextToSpeech mSimpleTextToSpeech = null;
     public SharedPreferences mPreferences = null;
+    public AnimationFactory mAnimationFactory = null;
     
     
     public final static String configNeedRunSetupWizardString = "NeedRunSetupWizard";
