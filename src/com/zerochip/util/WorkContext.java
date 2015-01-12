@@ -31,4 +31,5 @@ public class WorkContext
     public final static String configTelnetnameString = "Telnetname";
     public final static String configTelnetConnectionNumberString = "TelnetConnectionNumber";
     public final static String configDevicesIdListString = "DevicesIdList";
+    public final static String configUsernamesListString = "UsernamesList";
 }

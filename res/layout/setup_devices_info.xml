@@ -61,7 +61,8 @@
                 android:id="@+id/e_setup_device_name"
                 android:layout_width="@dimen/d_setup_edit_width"
                 android:layout_height="@dimen/d_setup_edit_high"
-                android:singleLine="true" />
+                android:singleLine="true" 
+                android:inputType="textCapCharacters"/>
 
             <EditText
                 android:id="@+id/e_setup_device_number"
@@ -109,7 +110,7 @@
             android:textSize="@dimen/d_welcome_setup_context" />
 
         <Button
-            android:id="@+id/b_finish"
+            android:id="@+id/b_device_next"
             android:layout_width="@dimen/d_setup_next_width"
             android:layout_height="@dimen/d_setup_next_high"
             android:layout_gravity="right"
@@ -117,8 +118,8 @@
             android:layout_marginRight="@dimen/d_welcome_setup_margin_right"
             android:background="@drawable/button_background"
             android:gravity="center"
-            android:onClick="FinishButtonOnClick"
-            android:text="@string/str_setup_finish"
+            android:onClick="NextButtonOnClick"
+            android:text="@string/str_next"
             android:textSize="@dimen/d_welcome_setup_context" />
     </LinearLayout>
 

@@ -1,21 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- 设置管理员页面 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/l_admin_setup"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@android:color/transparent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:gravity="center_vertical"
-    android:orientation="vertical"
-    android:visibility="gone" >
-
-    <TextView
-        style="@android:style/TextAppearance.WindowTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/d_welcome_setup_margin_left"
-        android:text="@string/str_admin_setup_title"
-        android:textSize="@dimen/d_welcome_setup_title" />
+    android:orientation="vertical" >
 
     <ImageView
         android:layout_width="fill_parent"
@@ -48,13 +36,14 @@
                 android:text="@string/str_admin_setup_passwd"
                 android:textSize="@dimen/d_welcome_setup_context"
                 android:textStyle="bold" />
-
+			<!--  
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/d_setup_edit_high"
-                android:text="@string/str_admin_setup_passwd_verify"
+                android:text="@string/str_user_type"
                 android:textSize="@dimen/d_welcome_setup_context"
                 android:textStyle="bold" />
+                -->
         </LinearLayout>
 
         <LinearLayout
@@ -64,25 +53,31 @@
             android:orientation="vertical" >
 
             <EditText
-                android:id="@+id/e_setup_admin_username"
+                android:id="@+id/e_login_username"
                 android:layout_width="@dimen/d_setup_edit_width"
                 android:layout_height="@dimen/d_setup_edit_high"
-                android:singleLine="true" 
-                android:inputType="textCapCharacters"/>
+                android:inputType="textCapCharacters"
+                android:singleLine="true" />
 
             <EditText
-                android:id="@+id/e_setup_admin_passwd"
+                android:id="@+id/e_login_passwd"
                 android:layout_width="@dimen/d_setup_edit_width"
                 android:layout_height="@dimen/d_setup_edit_high"
                 android:inputType="textPassword"
                 android:singleLine="true" />
 
-            <EditText
-                android:id="@+id/e_setup_admin_passwd_verify"
+            <!-- 
+            <Spinner
+                android:id="@+id/e_login_spinner"
+                android:layout_width="@dimen/d_setup_edit_width"
+                android:layout_height="@dimen/d_setup_edit_high" 
+                android:entries="@array/user_type"/>
+			-->
+            <CheckBox
+                android:id="@+id/ck_login_remeber"
                 android:layout_width="@dimen/d_setup_edit_width"
                 android:layout_height="@dimen/d_setup_edit_high"
-                android:inputType="textPassword"
-                android:singleLine="true" />
+                android:text="@string/str_remeber_passwd" />
         </LinearLayout>
     </LinearLayout>
 
@@ -100,19 +95,19 @@
         android:orientation="horizontal" >
 
         <Button
-            android:id="@+id/b_admin_previous"
+            android:id="@+id/b_login"
             android:layout_width="@dimen/d_setup_next_width"
             android:layout_height="@dimen/d_setup_next_high"
             android:layout_gravity="left"
             android:layout_marginRight="@dimen/d_welcome_setup_margin_left"
             android:background="@drawable/button_background"
             android:gravity="center"
-            android:onClick="PreviousButtonOnClick"
-            android:text="@string/str_previous"
+            android:onClick="LoginButtonOnClick"
+            android:text="@string/str_login"
             android:textSize="@dimen/d_welcome_setup_context" />
 
         <Button
-            android:id="@+id/b_admin_next"
+            android:id="@+id/b_cancle_login"
             android:layout_width="@dimen/d_setup_next_width"
             android:layout_height="@dimen/d_setup_next_high"
             android:layout_gravity="right"
@@ -120,8 +115,8 @@
             android:layout_marginRight="@dimen/d_welcome_setup_margin_right"
             android:background="@drawable/button_background"
             android:gravity="center"
-            android:onClick="NextButtonOnClick"
-            android:text="@string/str_next"
+            android:onClick="CancleButtonOnClick"
+            android:text="@string/str_cancle"
             android:textSize="@dimen/d_welcome_setup_context" />
     </LinearLayout>
 

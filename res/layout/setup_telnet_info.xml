@@ -61,13 +61,14 @@
                 android:id="@+id/e_setup_telnet_name"
                 android:layout_width="@dimen/d_setup_edit_width"
                 android:layout_height="@dimen/d_setup_edit_high"
-                android:singleLine="true" />
+                android:singleLine="true" 
+                android:inputType="textCapCharacters"/>
 
             <EditText
                 android:id="@+id/e_setup_telnet_connectipn_number"
                 android:layout_width="@dimen/d_setup_edit_width"
                 android:layout_height="@dimen/d_setup_edit_high"
-                android:inputType="number"
+                android:inputType="phone"
                 android:singleLine="true" />
         </LinearLayout>
     </LinearLayout>

@@ -7,6 +7,7 @@
     <!-- 通用 start -->
     <string name="str_next">"Next"</string>
     <string name="str_previous">"Privous"</string>
+    <string name="str_cancle">"Cancle"</string>
     <!-- 通用 End -->
 
 
@@ -36,6 +37,7 @@
     <string name="str_please_input_telnet_name">"Please Input Telnet Name！"</string>
     <string name="str_please_input_telnet_connection_number">"Please Input Telnet Connection Number！"</string>
     <!-- 设置终端 End -->
+    
     <!-- 设置设备 Start -->
     <string name="str_device_setup_title">"Setup Sensor Devices"</string>
     <string name="str_device_setup_name">"Device Name:"</string>
@@ -46,4 +48,17 @@
     <string name="str_please_input_sensor_devices_number">"Please Input Sendor Device serial number ID！"</string>
     <!-- 设置设备 End -->
 
+	<!-- 设置用户 非管理员 Start-->
+	<string name="str_user_setup_title">"Setup User Info"</string>
+	<string name="str_user_setup_name">"Username:"</string>
+	<string name="str_user_setup_passwd">"Passwd:"</string>
+	<string name="str_user_setup_passwd_verify">"Passwd verify:"</string>
+	<!-- 设置用户 非管理员 End-->
+
+	<!-- 登录页面 Start -->
+	<string name="str_remeber_passwd">"Remeber Passwd"</string>
+	<string name="str_login">"Login"</string>
+	<string name="str_user_type">"UserType:"</string>
+	<!-- 登录页面 End -->
+	
 </resources>

@@ -31,6 +31,7 @@ public class SetupWizardActivity extends Activity
     private Handler mHandler = new Handler();
     private SharedPreferences.Editor editor = null;
     private HashSet<String> DevicesIDSet = new HashSet<String>();
+    private HashSet<String> UserNamesSet = new HashSet<String>();
     /**
      * 全部的设置向导页面
      */
@@ -296,6 +297,23 @@ public class SetupWizardActivity extends Activity
                 }
             });
             break;
+        case R.id.b_device_next:
+            mHandler.post(new Runnable()
+            {
+                @Override
+                public void run()
+                {
+                    
+                    String DevicesName = GetDevicesName();
+                    String DevicesId = GetDevicesId();
+                    if (AddDeviceInfo(DevicesName, DevicesId))
+                    {
+                        SetShowPage(R.id.l_devices_setup, R.id.l_user_info_setup,
+                                false);
+                    }
+                }
+            });
+            break;
         default:
             break;
         }
@@ -342,6 +360,17 @@ public class SetupWizardActivity extends Activity
                 }
             });
             break;
+        case R.id.b_user_info_previous:
+            mHandler.post(new Runnable()
+            {
+                @Override
+                public void run()
+                {
+                    SetShowPage(R.id.l_user_info_setup, R.id.l_devices_setup, true);
+                }
+            });
+            break;
+       
         default:
             break;
         }
@@ -414,6 +443,11 @@ public class SetupWizardActivity extends Activity
             editor.putStringSet(mWorkContext.configDevicesIdListString,
                     DevicesIDSet);
             editor.commit();
+            ShowToast(mWorkContext.mResources
+                    .getString(R.string.str_device_add)
+                    + mWorkContext.mResources
+                            .getString(R.string.str_device_setup_name)
+                    +DevicesName);
             return true;
         }
     }
@@ -438,6 +472,89 @@ public class SetupWizardActivity extends Activity
             }
     }
 
+    
+    
+    private String GetUserInfoName()
+    {
+        EditText UserInfoNameEditText = (EditText) findViewById(R.id.e_setup_user_info_name);
+        if (UserInfoNameEditText == null)
+        {
+            return null;
+        }
+        else
+            if (UserInfoNameEditText.getText().toString().equals(""))
+            {
+                ShowToast(mWorkContext.mResources
+                        .getString(R.string.str_please_input_sensor_device_name));
+                return null;
+            }
+            else
+            {
+                return UserInfoNameEditText.getText().toString();
+            }
+    } 
+    
+    private String GetUserInfoPasswd()
+    {
+        EditText UserInfoPasswdEditText = (EditText) findViewById(R.id.e_setup_user_info_passwd);
+        EditText UserInfoPasswdVerifyEditText = (EditText) findViewById(R.id.e_setup_user_info_passwd_verify);
+        if (UserInfoPasswdEditText == null || UserInfoPasswdVerifyEditText == null)
+        {
+            return null;
+        }
+        else
+            if (UserInfoPasswdEditText.getText().toString().equals(""))
+            {
+                ShowToast(mWorkContext.mResources
+                        .getString(R.string.str_please_input_passwd));
+                return null;
+            }
+            else
+                if (UserInfoPasswdVerifyEditText.getText().toString().equals(""))
+                {
+                    ShowToast(mWorkContext.mResources
+                            .getString(R.string.str_please_input_passwd_verify));
+                    return null;
+                }
+                else
+                    if (!UserInfoPasswdVerifyEditText.getText().toString()
+                            .equals(UserInfoPasswdEditText.getText().toString()))
+                    {
+                        ShowToast(mWorkContext.mResources
+                                .getString(R.string.str_input_passwd_error_warning));
+                        return null;
+                    }
+                    else
+                    {
+                        return UserInfoPasswdEditText.getText().toString();
+                    }
+    }
+    
+    private boolean AddUserInfo(String UserInfoName, String UserInfoPasswd)
+    {
+        if (editor == null || UserInfoName == null || UserInfoPasswd == null)
+        {
+            return false;
+        }
+        else
+        {
+            if (DEBUG)
+                ShowToast("name: " + UserInfoName + "  passwd: " + UserInfoPasswd);
+            editor.putString(UserInfoName, UserInfoPasswd);
+            UserNamesSet.add(UserInfoName);
+            editor.putStringSet(mWorkContext.configUsernamesListString,
+                    UserNamesSet);
+            editor.commit();
+            ShowToast(mWorkContext.mResources
+                    .getString(R.string.str_device_add)
+                    + mWorkContext.mResources
+                            .getString(R.string.str_user_setup_name)
+                    +UserInfoName);
+            return true;
+        }
+    }
+
+    
     /**
      * @function AddButtonOnClick
      * @note 设置设备面"增加"按键按下
@@ -460,6 +577,20 @@ public class SetupWizardActivity extends Activity
                     AddDeviceInfo(DevicesName, DevicesId);
                 }
             });
+        }else if(v.getId() == R.id.b_user_info_add)
+        {
+         // 增加用户
+            mHandler.post(new Runnable()
+            {
+                @Override
+                public void run()
+                {
+                    String UserInfoName = GetUserInfoName();
+                    String UserInfoPasswd = GetUserInfoPasswd();
+                    AddUserInfo(UserInfoName, UserInfoPasswd);
+                }
+            });
+            
         }
     }
 
@@ -480,9 +611,10 @@ public class SetupWizardActivity extends Activity
                 @Override
                 public void run()
                 {
-                    String DevicesName = GetDevicesName();
-                    String DevicesId = GetDevicesId();
-                    AddDeviceInfo(DevicesName, DevicesId);
+                    String UserInfoName = GetUserInfoName();
+                    String UserInfoPasswd = GetUserInfoPasswd();
+                    AddUserInfo(UserInfoName, UserInfoPasswd);
+                    
                     editor.putBoolean(
                             mWorkContext.configNeedRunSetupWizardString, false);
                     editor.commit();

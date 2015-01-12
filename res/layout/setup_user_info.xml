@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- 设置管理员页面 -->
+<!-- 设置用户信息页面 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/l_admin_setup"
+    android:id="@+id/l_user_info_setup"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/transparent"
@@ -14,8 +14,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/d_welcome_setup_margin_left"
-        android:text="@string/str_admin_setup_title"
-        android:textSize="@dimen/d_welcome_setup_title" />
+        android:text="@string/str_user_setup_title"
+        android:textSize="@dimen/d_welcome_setup_title"
+        android:textStyle="bold" />
 
     <ImageView
         android:layout_width="fill_parent"
@@ -38,21 +39,21 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/d_setup_edit_high"
-                android:text="@string/str_admin_setup_username"
+                android:text="@string/str_user_setup_name"
                 android:textSize="@dimen/d_welcome_setup_context"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/d_setup_edit_high"
-                android:text="@string/str_admin_setup_passwd"
+                android:text="@string/str_user_setup_passwd"
                 android:textSize="@dimen/d_welcome_setup_context"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/d_setup_edit_high"
-                android:text="@string/str_admin_setup_passwd_verify"
+                android:text="@string/str_user_setup_passwd_verify"
                 android:textSize="@dimen/d_welcome_setup_context"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -64,21 +65,21 @@
             android:orientation="vertical" >
 
             <EditText
-                android:id="@+id/e_setup_admin_username"
+                android:id="@+id/e_setup_user_info_name"
                 android:layout_width="@dimen/d_setup_edit_width"
                 android:layout_height="@dimen/d_setup_edit_high"
-                android:singleLine="true" 
-                android:inputType="textCapCharacters"/>
+                android:inputType="textCapCharacters"
+                android:singleLine="true" />
 
             <EditText
-                android:id="@+id/e_setup_admin_passwd"
+                android:id="@+id/e_setup_user_info_passwd"
                 android:layout_width="@dimen/d_setup_edit_width"
                 android:layout_height="@dimen/d_setup_edit_high"
                 android:inputType="textPassword"
                 android:singleLine="true" />
 
             <EditText
-                android:id="@+id/e_setup_admin_passwd_verify"
+                android:id="@+id/e_setup_user_info_passwd_verify"
                 android:layout_width="@dimen/d_setup_edit_width"
                 android:layout_height="@dimen/d_setup_edit_high"
                 android:inputType="textPassword"
@@ -100,11 +101,11 @@
         android:orientation="horizontal" >
 
         <Button
-            android:id="@+id/b_admin_previous"
+            android:id="@+id/b_user_info_previous"
             android:layout_width="@dimen/d_setup_next_width"
             android:layout_height="@dimen/d_setup_next_high"
             android:layout_gravity="left"
-            android:layout_marginRight="@dimen/d_welcome_setup_margin_left"
+            android:layout_marginLeft="@dimen/d_welcome_setup_margin_left"
             android:background="@drawable/button_background"
             android:gravity="center"
             android:onClick="PreviousButtonOnClick"
@@ -112,16 +113,28 @@
             android:textSize="@dimen/d_welcome_setup_context" />
 
         <Button
-            android:id="@+id/b_admin_next"
+            android:id="@+id/b_user_info_add"
+            android:layout_width="@dimen/d_setup_next_width"
+            android:layout_height="@dimen/d_setup_next_high"
+            android:layout_gravity="left"
+            android:layout_marginLeft="@dimen/d_setup_button_three_margin_left"
+            android:background="@drawable/button_background"
+            android:gravity="center"
+            android:onClick="AddButtonOnClick"
+            android:text="@string/str_device_add"
+            android:textSize="@dimen/d_welcome_setup_context" />
+
+        <Button
+            android:id="@+id/b_finish"
             android:layout_width="@dimen/d_setup_next_width"
             android:layout_height="@dimen/d_setup_next_high"
             android:layout_gravity="right"
-            android:layout_marginLeft="@dimen/d_setup_button_margin_left"
+            android:layout_marginLeft="@dimen/d_setup_button_three_margin_left"
             android:layout_marginRight="@dimen/d_welcome_setup_margin_right"
             android:background="@drawable/button_background"
             android:gravity="center"
-            android:onClick="NextButtonOnClick"
-            android:text="@string/str_next"
+            android:onClick="FinishButtonOnClick"
+            android:text="@string/str_setup_finish"
             android:textSize="@dimen/d_welcome_setup_context" />
     </LinearLayout>
 
